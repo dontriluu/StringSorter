@@ -1,10 +1,20 @@
 package com.example.StringSorter;
 
+import java.io.File;
+import java.util.List;
+
 public class StringSorter {
 
 
     public static void main(String[] args) {
-        InputReader.processInputFile();
+        List<String> inputList = InputReader.processInputFile();
+
+        try {
+            File outputFile = OutputWriter.writeOutput(inputList);
+        }
+        catch (Exception e)   {
+            e.printStackTrace();
+        }
     }
 
 }
