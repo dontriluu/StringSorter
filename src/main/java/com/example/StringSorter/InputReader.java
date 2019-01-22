@@ -17,9 +17,10 @@ public class InputReader {
         try {
 
             inputScanner = new Scanner(new File(INPUT_FILE));
+            inputScanner.useDelimiter(DELIMITER) ;
+
             while (inputScanner.hasNext()) {
-
-
+                inputList.add(inputScanner.next());
             }
 
 
