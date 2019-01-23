@@ -10,6 +10,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 
 public class StringSorterTest {
@@ -23,6 +24,15 @@ public class StringSorterTest {
         assertThat(inputList, is(notNullValue()));
     }
 
+    @Test
+    public void testSortListInDescendingOrder() {
+        List<String> listToSort = new ArrayList<>();
+
+        List<String> sortedList = SortList.processDescendingOrder(listToSort);
+
+        // Check if list is sorted in descending order
+        assertFalse(sortedList.equals(listToSort));
+    }
 
     @Test
     public void testWriteOutputFile() {
