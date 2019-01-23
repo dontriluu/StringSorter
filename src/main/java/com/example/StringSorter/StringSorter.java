@@ -10,6 +10,7 @@ public class StringSorter {
         List<String> inputList = InputReader.processInputFile();
 
         try {
+            SortList.processDescendingOrder(inputList);
             File outputFile = OutputWriter.writeOutput(inputList);
         }
         catch (Exception e)   {

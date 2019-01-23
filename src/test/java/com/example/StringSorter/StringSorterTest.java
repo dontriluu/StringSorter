@@ -27,11 +27,20 @@ public class StringSorterTest {
     @Test
     public void testSortListInDescendingOrder() {
         List<String> listToSort = new ArrayList<>();
+        listToSort.add("Copenhagen");
+        listToSort.add("Stockholm");
+        listToSort.add("Oslo");
 
-        List<String> sortedList = SortList.processDescendingOrder(listToSort);
+        List<String>  unsortedList = new ArrayList<>();
+        for (String item : listToSort) {
+            unsortedList.add(item);
+        }
+
+        SortList.processDescendingOrder(listToSort);
+
 
         // Check if list is sorted in descending order
-        assertFalse(sortedList.equals(listToSort));
+        assertFalse(unsortedList.equals(listToSort));
     }
 
     @Test
