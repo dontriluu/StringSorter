@@ -22,9 +22,13 @@ public class OutputWriter {
             outputBuffer = new BufferedWriter(new FileWriter(outputFile));
 
             // Write output
+            int counter = 0;
             for(String item : listToWrite) {
                 outputBuffer.write(item);
-                outputBuffer.write(",");
+                counter++;
+
+                if (counter < listToWrite.size())
+                    outputBuffer.write(",");
             }
         }
         catch (IOException e)  {
